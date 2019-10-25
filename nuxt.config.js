@@ -48,26 +48,23 @@ export default {
    ** Nuxt.js modules
    */
   modules: [
-    'nuxt-fontawesome',
-    //OR like this
-    ['nuxt-fontawesome', {
-      component: 'fa',
-      imports: [
-        //import whole set
-        {
-          set: '@fortawesome/free-solid-svg-icons',
-          icons: ['fas']
-        },
-        //import 2 icons from set 
-        // please note this is PRO set in this example, 
-        // you must have it in your node_modules to actually import
-        {
-          set: '@fortawesome/pro-regular-svg-icons',
-          icons: ['faAdjust', 'faArchive']
-        }
-      ]
-    }]
+    [
+      'nuxt-fontawesome', {
+        imports: [{
+            set: '@fortawesome/free-solid-svg-icons',
+            icons: ['fas']
+          },
+          {
+            set: '@fortawesome/free-brands-svg-icons',
+            icons: ['fab']
+          }
+        ]
+      }
+    ],
+    '@nuxtjs/bulma'
+
   ],
+
   /*
    ** Build configuration
    */
